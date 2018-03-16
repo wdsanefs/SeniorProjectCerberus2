@@ -1,0 +1,80 @@
+[debug] [2018-03-16T03:33:47.423Z] ----------------------------------------------------------------------
+[debug] [2018-03-16T03:33:47.426Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2018-03-16T03:33:47.427Z] CLI Version:   3.17.6
+[debug] [2018-03-16T03:33:47.427Z] Platform:      win32
+[debug] [2018-03-16T03:33:47.427Z] Node Version:  v9.8.0
+[debug] [2018-03-16T03:33:47.427Z] Time:          Thu Mar 15 2018 23:33:47 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-16T03:33:47.427Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-16T03:33:47.444Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-03-16T03:33:47.445Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Will9S4
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2018-03-16T03:34:24.998Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Thu Mar 15 2018 23:34:24 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-16T03:34:26.068Z] <<< HTTP RESPONSE 200
+[info] i  .firebaserc already has a default project, skipping
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2018-03-16T03:34:51.390Z] Error: EISDIR: illegal operation on a directory, open 'C:\Users\Will9S4\public'
+    at Object.fs.openSync (fs.js:667:18)
+    at Object.fs.writeFileSync (fs.js:1326:33)
+    at Config.writeProjectFile (C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:170:6)
+    at C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\database.js:27:19
+    at tryCatch (C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:525:12)
+    at invokeCallback (C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:538:13)
+    at C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:606:14
+    at flush (C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\rsvp\dist\rsvp.js:2415:5)
+    at process._tickCallback (internal/process/next_tick.js:112:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-03-16T03:34:58.251Z] ----------------------------------------------------------------------
+[debug] [2018-03-16T03:34:58.255Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Will9S4\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2018-03-16T03:34:58.255Z] CLI Version:   3.17.6
+[debug] [2018-03-16T03:34:58.255Z] Platform:      win32
+[debug] [2018-03-16T03:34:58.255Z] Node Version:  v9.8.0
+[debug] [2018-03-16T03:34:58.256Z] Time:          Thu Mar 15 2018 23:34:58 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-03-16T03:34:58.256Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-16T03:34:58.273Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-03-16T03:34:58.274Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Will9S4
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
