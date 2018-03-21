@@ -1,29 +1,34 @@
-var provider = new firebase.auth.GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+const txtEmail = document.getElementById("Email");
+const txtPassword = document.getElementById("Password");
+const btnLogin = document.getElementById("btnLogin");
+const btnSignUp = document.getElementById("btnSignUp");
+const btnLogout = document.getElementById("btnLogout");
 
-provider.setCustomParameters({
-  'login_hint': 'user@example.com'
+btnLogin.addEventListener('click', e => {
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  const auth = firebase.auth();
+
+  const promise = auth.signInWithEmailAndPassword(email, pass);
+  promise.catch(e => console.log(e.message));
+  window.alert(e.message);
+      
 });
-alert('login_hint');
-function signIn(){
+btnSignUp.addEventListener('click',e =>{
+  const email = txtEmail.value;
+  const pass = txtPassword.value;
+  const auth = firebase.auth();
 
-	firebase.auth().signInWithRedirect(provider); 
-  firebase.auth().getRedirectResult().then(function(result) {
-      if (result.credential) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // ...
-      }
-      // The signed-in user info.
-      var user = result.user;
-    }).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-    });
-	}
+  const promise = auth.createUserWithEmailAndPassword(email, pass)
+  
+});
+
+firebase.auth().onAuthStateChanged(firebaseUser=>{
+  if(firebaseUser){
+    console.log(firebaseUser);
+  }
+  else{
+    console.log('not logged in');
+  }
+
+});
