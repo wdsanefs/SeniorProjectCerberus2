@@ -1,40 +1,57 @@
+// here are a set of variables taknen from the id's used from the HTML 
 const txtEmail = document.getElementById("Email");
 const txtPassword = document.getElementById("Password");
+const GuestUser = document.getElementById("anonymous")
 const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
+const btnLogout = document.getElementById("btnLogout");
 
-$("#btnLogin").show();
-$("#btnSignUp").show();
+var database = firebase.database().ref('/users/');
 
+
+// Guest User Authentication 
+GuestUser.addEventListener('click', e => {
+ 
+  firebase.auth().signInAnonymously();
+   window.alert("you are signed in as guest!");
+});
+
+
+//Login button for the User if they have an account  
 btnLogin.addEventListener('click', e => {
   const email = txtEmail.value;
-  const pass = txtPassword.value;
+  const password = txtPassword.value;
   const auth = firebase.auth();
 
-  const promise = auth.signInWithEmailAndPassword(email, pass);
+  const promise = auth.signInWithEmailAndPassword(email, password);
+  
   promise.catch(e => console.log(e.message));
  
-      
-});
-btnSignUp.addEventListener('click',e =>{
-  const email = txtEmail.value;
-  const pass = txtPassword.value;
-  const auth = firebase.auth();
-
-
-  const promise = auth.createUserWithEmailAndPassword(email, pass)
-  window.alert("Account created sign in");
-
-  $("#btnSignUp").hide();
-});
-
-firebase.auth().onAuthStateChanged(firebaseUser=>{
-  if(firebaseUser){
-    console.log(firebaseUser);
-
+  // changes the state of the firebase 
+  firebase.auth().onAuthStateChanged(firebaseuser=>{
+  if(firebaseuser){
+    console.log(firebaseuser);
+    window.location ="HomePage.html";
   }
   else{
-    console.log('not logged in');
+      window.location ="index.html";
   }
 
 });
+      
+});
+
+// Signup to hlep create an account for the 
+btnSignUp.addEventListener('click',e =>{
+  const email = txtEmail.value;
+  const password = txtPassword.value;
+  const auth = firebase.auth();
+  const promise = auth.createUserWithEmailAndPassword(email, password)
+  window.alert("Account created, sign in!!!")
+
+  // once the values are submited they will be uploaded to the authentication and the database for security measures 
+  database.push().set(email);
+  database.push().set(password);
+});
+
+  

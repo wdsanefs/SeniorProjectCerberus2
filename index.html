@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,8 +10,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Cerberus</title>
+ 
+
   </head>
   <body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Cerberus</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,17 +22,32 @@
   </button>
 </nav>
 
- <div class="form-group">
-  <label for="usr">Email:</label>
-  <input type="text" class="form-control" id="Email">
-</div>
-<div class="form-group">
-  <label for="pwd">Password:</label>
-  <input type="password" class="form-control" id="Password">
-</div> 
 
-<a id ="btnLogin" class="btn btn-primary btn-lg btn-block" href="file:///C:/Users/Will9S4/Documents/public/HomePage.html" role="button">Sign-In</a>
-<button id="btnSignUp" type="button" class="btn btn-secondary btn-lg btn-block">Create an account</button>
+<div id = loginDialog class="login">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div id = "Sign-in-div" class="modal-header">
+        <h5 class="modal-title">Sign in to Cerberus</h5>
+          </div>
+         <div class="form-group">
+          <label for="usr">Email:</label>
+          <input id ="Email" type="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label  for="pwd">Password:</label>
+          <input id ="Password" type="password" class="form-control" id="pwd">
+         <div class="form-group">
+          <label  for="anonymous">Sign in as Guest</label>
+          <input id ="anonymous" type="checkbox" class = "form-group">
+        </div> 
+
+      <button id = "btnLogin" type="button" class="btn btn-primary btn-sm">Sign-In</button>
+      <button id = "btnSignUp" type="button" class="btn btn-secondary btn-sm">Create an Account</button>
+
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -37,19 +56,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-    <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyC1O1b04cbeM64K7hzKgmXOrd2WtHVWBKo",
-      authDomain: "loginseniorproject.firebaseapp.com",
-      databaseURL: "https://loginseniorproject.firebaseio.com",
-      projectId: "loginseniorproject",
-      storageBucket: "loginseniorproject.appspot.com",
-      messagingSenderId: "236370025054"
-    };
-    firebase.initializeApp(config);
-    </script>
-    <script src= "SignUp.js"></script>
+
+
+ 
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhaxl9T9kYvRE80X-JjD1QQ9PuYzyamBo",
+    authDomain: "senior-project-cer.firebaseapp.com",
+    databaseURL: "https://senior-project-cer.firebaseio.com",
+    projectId: "senior-project-cer",
+    storageBucket: "senior-project-cer.appspot.com",
+    messagingSenderId: "801054851116"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="SignUp.js"></script>
+
   </body>
 </html>

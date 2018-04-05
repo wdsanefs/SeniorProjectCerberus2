@@ -21,23 +21,24 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="file:///C:/Users/Will9S4/Documents/public/HomePage.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/HomePage.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="file:///C:/Users/Will9S4/Documents/public/Upload.html">Upload</a>
+        <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/Upload.html">Upload</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="file:///C:/Users/Will9S4/Documents/public/index.html">Sign-Out</a>
+        <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/index.html">Sign-Out</a>
       </li>
   </div>
 </nav>
 
  <form>
   <div id = "uploader" class="form-group">
-    <label class ="upload-group" >Upload or Download your files</label>
+    <label class ="upload-group"for="exampleFormControlFile1">Example file input</label>
     <input type="file" class="form-control-file" id="File">
   </div>
-   <button onclick ="Upload()" id= "Upload-btn" type="submit" class="btn btn-primary">Upload</button>
+   <button onclick ="Upload()" id= "Upload-btn" type="submit" class="btn btn-secondary">Upload</button>
+   <button onclick ="Download()" id= "Download-btn" type="submit" class="btn btn-primary">Download</button>
 </form>
 
     <!-- Optional JavaScript -->
@@ -46,21 +47,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyC1O1b04cbeM64K7hzKgmXOrd2WtHVWBKo",
-    authDomain: "loginseniorproject.firebaseapp.com",
-    databaseURL: "https://loginseniorproject.firebaseio.com",
-    projectId: "loginseniorproject",
-    storageBucket: "loginseniorproject.appspot.com",
-    messagingSenderId: "236370025054",
-    storageBucket: "gs://loginseniorproject.appspot.com"
+    apiKey: "AIzaSyAhaxl9T9kYvRE80X-JjD1QQ9PuYzyamBo",
+    authDomain: "senior-project-cer.firebaseapp.com",
+    databaseURL: "https://senior-project-cer.firebaseio.com",
+    projectId: "senior-project-cer",
+    storageBucket: "senior-project-cer.appspot.com",
+    messagingSenderId: "801054851116"
   };
   firebase.initializeApp(config);
 </script>
-    
-    <script type="text/javascript" src="Database.js"> </script>
+    <script type="text/javascript" src="Download.js"> </script>
+    <script type="text/javascript" src="Upload.js"> </script>
   </body>
 </html>
