@@ -28,10 +28,10 @@ btnLogin.addEventListener('click', e => {
   promise.catch(e => console.log(e.message));
  
   // changes the state of the firebase 
-  firebase.auth().onAuthStateChanged(user=>{
-  if(user){
-    console.log(user);
-    window.location ="Survey.html";
+  firebase.auth().onAuthStateChanged(firebaseuser=>{
+  if(firebaseuser){
+    console.log(firebaseuser);
+    window.location ="HomePage.html";
   }
   else{
       window.location ="index.html";

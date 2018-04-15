@@ -1,13 +1,13 @@
-FileName = document.getElementById('File');
-$("#Upload-btn").hide();
+
+$("#Import-btn").hide();
 $("#File").on("change",function(event){
 	selectedFile = event.target.files[0];
 	
-	$("#Upload-btn").show();
+	$("#Import-btn").show();
 });
 	
-function Upload(){
-
+function Import(){
+	console.log("hi");
 	// Create a root reference
 	var FileName = selectedFile.name; 
 	var storageRef = firebase.storage().ref('/Surveys/' + FileName);
@@ -19,28 +19,26 @@ function Upload(){
 	window.alert("SUCCSS!!!! file uploaded");
 
 	//this uploads the files to cloud storage 
-	uploadTask.on('state_changed', function(snapshot)
+	uploadTask.on('state_changed', function(survey)
 	{
+	//prossesing 
 
 	// create a key for each file 
-		var FileData = firebase.database().ref('posts').push().key;
-
-		var downloadURL = uploadTask.snapshot.downloadURL;
-		console.log(downloadURL);
+		var database = firebase.database();
 	 // Get a key for a new Post.
-  		console.log(FileData);
-  		  var FileData = firebase.database().ref().child('posts').push().key;
+  		var newPostKey = firebase.database().ref().child('posts').push().key;
 
   	// Write the new post's data simultaneously in the posts list and the user's post list.
   		var updates = {};
-  		var postData = {
-  			file: selectedFile.val()
-  		}
-  		updates['/users-posts/' + FileData]= postData
-  		firebase.database().ref().update(updates)
+  		var postData = {};
+  		updates['/posts/' + newPostKey] = postData;
   		console.log(postData);
-  		console.log(updates);
-  
+
+  		firebase.database().ref().update(updates);
+
 	});
+
+}
+function Export(){
 
 }

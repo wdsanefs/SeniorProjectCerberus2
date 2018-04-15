@@ -1,0 +1,53 @@
+
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+ 
+<table>
+    <tr><td>Welcome to Cerberus find a file to load:</td></tr>
+     <tr>
+        <td>Select a File to Load:</td>
+        <td><input type="file" id="fileToLoad"></td>
+        <td><button onclick="loadFileAsText()">Load Selected File</button><td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <textarea id="inputTextToSave" cols="100" rows="100"></textarea>
+
+        </td>
+    </tr>
+   <button id = "p"></button>
+</table>
+ 
+<script type="text/javascript">
+
+ event= document.getElementById("p");
+  $("#p").hide();
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+ 
+function loadFileAsText()
+{
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
+    var regex = /d+/;
+ 
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+        document.getElementById("inputTextToSave").value = textFromFileLoaded;
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+    fileReader.replace(regex, event);
+}
+
+ 
+</script>
+ 
+</body>
+</html>
+</html>

@@ -17,30 +17,51 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/HomePage.html">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
-        <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/Upload.html">Upload</a>
+        <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/Upload.html">Surevey</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="file:///Users/williamsanefski/Documents/public/index.html">Sign-Out</a>
       </li>
   </div>
 </nav>
-<div class="jumbotron">
-  <h1 class="display-4">Welcome to Cerberus!</h1>
-  <p class="lead">Congratulations you have succesfully signed into Cerberus.</p>
-  <hr class="my-4">
-  <p>This application will allow you to Send Survey's to your coworkers.</p>
-</div>
+
+ <form>
+  <div id = "uploader" class="form-group">
+    <label class ="upload-group" for="File-Upload"> Input a file </label>
+    <input type="file" accept= ".txt" class="form-control-file" id="File">
+  </div>
+   <button onclick ="Upload()" id= "Import-btn" type="submit" class="btn btn-secondary">Import</button>
+     <button id= "Export-btn" type="submit" class="btn btn-secondary">Export</button>
+   <button id= "Email-btn" type="submit" class="btn btn-primary">Email</button>
+</form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhaxl9T9kYvRE80X-JjD1QQ9PuYzyamBo",
+    authDomain: "senior-project-cer.firebaseapp.com",
+    databaseURL: "https://senior-project-cer.firebaseio.com",
+    projectId: "senior-project-cer",
+    storageBucket: "senior-project-cer.appspot.com",
+    messagingSenderId: "801054851116"
+  };
+  firebase.initializeApp(config);
+</script>
+      
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-firestore.js"></script>
+
+    <script type="text/javascript" src="Survey.js"> </script>
   </body>
 </html>
